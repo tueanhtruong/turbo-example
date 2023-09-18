@@ -9,7 +9,7 @@
     "lint": "next lint",
     "start": "next start",
     "prepare": "pnpm run panda",
-    "panda": "panda"
+    "panda": "panda codegen"
   },
   "dependencies": {
     "logger": "workspace:*",

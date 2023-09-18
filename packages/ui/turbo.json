@@ -2,10 +2,11 @@
   "extends": ["//"],
   "pipeline": {
     "build": {
-      "outputs": ["dist/**"]
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build", "panda"]
     },
     "panda": {
-      "cache": false,
+      "cache": true,
       "outputs": ["./styled-system/**"],
       "inputs": ["./panda.config.ts"]
     },

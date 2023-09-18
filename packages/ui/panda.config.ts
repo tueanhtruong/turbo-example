@@ -18,14 +18,7 @@ export default defineConfig({
   presets: [uiPreset],
 
   // The output directory for your css system
-  emitPackage: true,
   outdir: "styled-system",
   jsxFramework: "react",
   outExtension: "js",
-  // staticCss: {
-  //   recipes: Object.keys({ ...recipes }).reduce(
-  //     (obj, r) => ({ ...obj, [r]: ["*"] }),
-  //     {}
-  //   ),
-  // },
 });

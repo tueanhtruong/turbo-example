@@ -277,7 +277,7 @@ importers:
         specifier: workspace:*
         version: link:../tsconfig
       typescript:
-        specifier: ^4.8.3
+        specifier: ^4.9.5
         version: 4.9.5
 
   packages/tsconfig: {}
