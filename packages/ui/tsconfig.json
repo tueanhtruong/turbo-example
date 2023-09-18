@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "ES2015"]
+    "lib": ["dom", "ES2015"],
+    "baseUrl": ".",
+    "paths": {
+      "~styled-system/*": ["./styled-system/*"]
+    }
   },
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
+  "include": ["src", "styled-system"],
   "exclude": ["dist", "build", "node_modules"]
 }

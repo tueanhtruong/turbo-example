@@ -3,6 +3,16 @@
   "pipeline": {
     "build": {
       "outputs": ["dist/**"]
+    },
+    "panda": {
+      "cache": false,
+      "outputs": ["./styled-system/**"],
+      "inputs": ["./panda.config.ts"]
+    },
+    "dev": {
+      "dependsOn": ["panda"],
+      "cache": false,
+      "persistent": true
     }
   }
 }

@@ -6,11 +6,11 @@
     "build": {
       "outputs": ["./dist/**"],
       "dependsOn": ["^build"]
-
     },
     "test": {
       "outputs": ["coverage/**"],
-      "dependsOn": []
+      "dependsOn": [],
+      "cache": false
     },
     "lint": {
       "dependsOn": ["^build"]

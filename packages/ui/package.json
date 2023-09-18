@@ -8,14 +8,34 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
+    "src",
     "dist/**"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build": "tsup --format esm,cjs --dts --external react",
     "clean": "rm -rf dist",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "dev": "wireit",
     "lint": "eslint \"src/**/*.ts*\"",
+    "prepare": "pnpm run panda",
+    "panda": "panda",
     "test": "jest"
+  },
+  "imports": {
+    "~styled-system/*": "./styled-system/*"
+  },
+  "wireit": {
+    "dev:css": {
+      "command": "panda --watch"
+    },
+    "dev:js": {
+      "command": "tsup src/index.tsx --format esm,cjs --watch --dts --external react"
+    },
+    "dev": {
+      "dependencies": [
+        "dev:css",
+        "dev:js"
+      ]
+    }
   },
   "jest": {
     "preset": "jest-presets/jest/node"
