@@ -8,7 +8,7 @@
     "panda": {
       "cache": true,
       "outputs": ["./styled-system/**"],
-      "inputs": ["./panda.config.ts"]
+      "inputs": ["./panda.config.ts", "./src**"]
     },
     "dev": {
       "dependsOn": ["panda"],

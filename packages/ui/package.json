@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "tsup --format esm,cjs --dts --external react",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf dist && rm -rf styled-system",
     "dev": "wireit",
     "lint": "eslint \"src/**/*.ts*\"",
     "prepare": "pnpm run panda",

@@ -4,15 +4,14 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "clean": "rm -rf .next",
+    "clean": "rm -rf .next && rm -rf styled-system",
     "dev": "next dev -p 34567",
     "lint": "next lint",
     "start": "next start",
     "prepare": "pnpm run panda",
-    "panda": "panda codegen"
+    "panda": "panda"
   },
   "dependencies": {
-    "logger": "workspace:*",
     "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

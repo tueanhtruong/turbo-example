@@ -1,5 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 import { uiPreset } from "ui/src/preset";
+import { recipes } from "ui/src/recipes";
 
 export default defineConfig({
   // Whether to use css reset
@@ -22,4 +23,10 @@ export default defineConfig({
   outdir: "styled-system",
   jsxFramework: "react",
   outExtension: "js",
+  staticCss: {
+    recipes: Object.keys({ ...recipes }).reduce(
+      (obj, r) => ({ ...obj, [r]: ["*"] }),
+      {}
+    ),
+  },
 });

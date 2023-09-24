@@ -3,7 +3,7 @@
   "scripts": {
     "build": "turbo build --filter=!admin --filter=!api --filter=!blog",
     "clean": "turbo clean",
-    "dev": "turbo dev --no-cache  --continue --concurrency=12 --filter=!admin --filter=!api --filter=!blog",
+    "dev": "turbo dev --no-cache  --continue --concurrency=12 --filter=!admin --filter=!storefront --filter=!blog",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint",
     "test": "turbo test",
@@ -14,12 +14,24 @@
     "@commitlint/config-conventional": "^17.7.0",
     "@pandacss/dev": "^0.15.0",
     "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "postcss": "^8.4.29",
     "prettier": "^2.7.1",
     "tsc": "^2.0.4",
     "turbo": "latest",
     "typescript": "^4.9.5",
     "wireit": "^0.14.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{scss,css,less}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "packageManager": "pnpm@8.6.10"
 }
