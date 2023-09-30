@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "nest build",
+    "build": "wireit",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "dev": "nest start --watch",
@@ -20,24 +20,23 @@
     "prisma:g": "npx prisma generate",
     "prisma:i": "npx prisma introspect",
     "prisma:deploy": "npx prisma migrate deploy",
-    "prisma:s": "npx prisma db seed",
-    "deploy": "wireit"
+    "prisma:s": "npx prisma db seed"
   },
   "wireit": {
-    "deploy:db-gen": {
+    "build:db-gen": {
       "command": "npx prisma generate"
     },
-    "deploy:db-deploy": {
+    "build:db-deploy": {
       "command": "npx prisma migrate deploy"
     },
-    "deploy:build": {
+    "build:build": {
       "command": "nest build"
     },
-    "deploy": {
+    "build": {
       "dependencies": [
-        "deploy:db-gen",
-        "deploy:build",
-        "deploy:db-deploy"
+        "build:db-gen",
+        "build:build",
+        "build:db-deploy"
       ]
     }
   },
